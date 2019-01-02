@@ -1,0 +1,59 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.idfconnect.misc.javadoc</groupId>
+	<artifactId>javadoc-tests</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<name>Unit tests for maven javadoc plugin</name>
+
+	<properties>
+		<java.compile.version>1.8</java.compile.version>
+		<maven-compiler-plugin.version>3.5.1</maven-compiler-plugin.version>
+		<maven-javadoc-plugin.version>3.0.1</maven-javadoc-plugin.version>		
+	</properties>
+
+	<build>
+		<plugins>
+			<!-- Compile plugin -->
+			<plugin>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>${maven-compiler-plugin.version}</version>
+				<configuration>
+					<source>${java.compile.version}</source>
+					<target>${java.compile.version}</target>
+				</configuration>
+			</plugin>
+
+			<!-- Javadoc plugin -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-javadoc-plugin</artifactId>
+				<version>${maven-javadoc-plugin.version}</version>
+				<configuration>
+					<ignoreClirr>true</ignoreClirr>
+				</configuration>
+			</plugin>
+
+		</plugins>
+	</build>
+
+	<dependencies>
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-api</artifactId>
+			<version>1.7.25</version>
+		</dependency>
+		<dependency>
+			<groupId>ch.qos.logback</groupId>
+			<artifactId>logback-classic</artifactId>
+			<version>1.2.3</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>com.idfconnect.ssorest</groupId>
+			<artifactId>common-tools</artifactId>
+			<version>3.1.4-SNAPSHOT</version>
+		</dependency>
+	</dependencies>
+</project>
